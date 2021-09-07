@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #abc798;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ComponentController">
+   <children>
+      <TableView fx:id="table" layoutX="313.0" layoutY="130.0" prefHeight="360.0" prefWidth="681.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="46.0" text="ID" />
+            <TableColumn fx:id="componentNameCol" prefWidth="203.0" text="Component name" />
+            <TableColumn fx:id="containLactoseCol" prefWidth="171.0" text="Contain lactose" />
+            <TableColumn fx:id="containGlutenCol" prefWidth="174.0" text="Contain gluten" />
+            <TableColumn fx:id="priceCol" prefWidth="79.0" text="Price" />
+         </columns>
+      </TableView>
+      <AnchorPane fx:id="pane" layoutY="107.0" prefHeight="471.0" prefWidth="300.0">
+         <children>
+            <JFXTextField fx:id="nameForEdit" layoutX="33.0" layoutY="104.0" promptText="Enter component's name" />
+            <JFXTextField fx:id="componentName" layoutX="37.0" layoutY="155.0" promptText="Component name" />
+            <JFXCheckBox fx:id="containLactose" checkedColor="BLACK" layoutX="41.0" layoutY="214.0" text="Contain lacose" />
+            <JFXCheckBox fx:id="containGluten" checkedColor="BLACK" layoutX="41.0" layoutY="253.0" text="Contain gluten" />
+            <JFXTextField fx:id="componentPrice" layoutX="39.0" layoutY="295.0" promptText="Component price" />
+            <JFXButton fx:id="submitEdit" layoutX="48.0" layoutY="345.0" onAction="#submitEditComponent" prefHeight="56.0" prefWidth="98.0" styleClass="button2" text="Submit" />
+            <JFXButton fx:id="submitAdd" layoutX="46.0" layoutY="345.0" onAction="#submitAddComponent" prefHeight="56.0" prefWidth="98.0" styleClass="button2" text="Submit" />
+            <JFXButton fx:id="searchIdRemove" layoutX="191.0" layoutY="99.0" onAction="#removeComponent" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="searchId" layoutX="191.0" layoutY="100.0" onAction="#searchForEdit" prefHeight="34.0" prefWidth="90.0" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="RemoveComponent" layoutX="209.0" layoutY="34.0" onAction="#showRemoveComponent" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="EditComponent" layoutX="124.0" layoutY="34.0" onAction="#showEditComponent" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="AddComponent" layoutX="38.0" layoutY="34.0" onAction="#showAddComponent" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1.0" prefHeight="56.0" prefWidth="1000.0" style="-fx-background-color: #eeefeb;">
+         <children>
+            <JFXButton layoutX="17.0" layoutY="6.0" onAction="#switchToHomePage" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backTo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="96.0" layoutY="5.0" onAction="#ShowMenu" prefHeight="48.0" prefWidth="76.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="450.0" layoutY="6.0" text="Components">
+               <font>
+                  <Font name="Cambria" size="30.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutY="544.0" prefHeight="56.0" prefWidth="900.0" />
+   </children>
+</AnchorPane>

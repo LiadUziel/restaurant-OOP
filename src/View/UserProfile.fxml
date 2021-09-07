@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #fbfbfb;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserProfileController">
+   <children>
+      <Label layoutX="10.0" layoutY="110.0" text="First name:" />
+      <Label layoutX="10.0" layoutY="149.0" text="Last Name:" />
+      <Label layoutX="10.0" layoutY="199.0" text="Date of birth:" />
+      <Label layoutX="10.0" layoutY="246.0" text="Gender:" />
+      <Label layoutX="10.0" layoutY="294.0" text="Neighberhood:" />
+      <Label fx:id="labelLactose" layoutX="10.0" layoutY="327.0" text="labelLactose" />
+      <Label fx:id="labelGluten" layoutX="10.0" layoutY="360.0" text="labelGluten" />
+      <JFXTextField fx:id="firstName" layoutX="105.0" layoutY="102.0" />
+      <JFXTextField fx:id="lastName" layoutX="106.0" layoutY="138.0" />
+      <JFXTextField fx:id="neighberhood" layoutX="111.0" layoutY="285.0" />
+      <DatePicker fx:id="birthDay" layoutX="91.0" layoutY="191.0" />
+      <JFXTextField fx:id="gender" layoutX="107.0" layoutY="239.0" />
+      <JFXButton fx:id="editButton" layoutX="84.0" layoutY="558.0" onAction="#showEdit" style="-fx-background-color: #abac7f;" styleClass="button2" text="Edit" />
+      <JFXButton fx:id="submitEdit" layoutX="83.0" layoutY="558.0" onAction="#submitEdit" style="-fx-background-color: #abac7f;" styleClass="button2" text="Submit" />
+      <Label fx:id="labelEdit" layoutX="11.0" layoutY="67.0" text="labelEdit" textFill="#abac7f" />
+      <JFXComboBox fx:id="genderEdit" layoutX="107.0" layoutY="237.0" prefHeight="25.0" prefWidth="135.0" />
+      <JFXComboBox fx:id="neighEdit" layoutX="111.0" layoutY="285.0" prefHeight="25.0" prefWidth="135.0" />
+      <JFXCheckBox fx:id="lactoseEdit" checkedColor="BLACK" layoutX="191.0" layoutY="322.0" text=" " />
+      <JFXCheckBox fx:id="glutenEdit" checkedColor="BLACK" layoutX="191.0" layoutY="359.0" text=" " />
+      <JFXListView fx:id="listOrderHistory" layoutX="307.0" layoutY="368.0" prefHeight="200.0" prefWidth="200.0" styleClass="listyle" />
+      <JFXListView fx:id="listDishesOrder" layoutX="533.0" layoutY="368.0" prefHeight="200.0" prefWidth="200.0" styleClass="listyle" />
+      <Label fx:id="labelDishesOrder" layoutX="533.0" layoutY="343.0" text="labelDishesOrder" />
+      <JFXListView fx:id="listComps" layoutX="753.0" layoutY="368.0" prefHeight="200.0" prefWidth="200.0" styleClass="listyle" />
+      <Label fx:id="labelComps" layoutX="753.0" layoutY="343.0" text="labelComps" />
+      <ImageView fx:id="image" fitHeight="150.0" fitWidth="150.0" layoutX="45.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane layoutX="-2.0" prefHeight="50.0" prefWidth="1000.0" style="-fx-background-color: #abac7f;">
+         <children>
+            <JFXButton layoutX="58.0" layoutY="5.0" onAction="#showOrderHistory" text="Order history">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/orderHistory.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="6.0" layoutY="5.0" onAction="#switchTo_RestMenu" text=" ">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backTo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="450.0" layoutY="6.0" text="My Profile">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneRemove" layoutX="470.0" layoutY="107.0" prefHeight="200.0" prefWidth="325.0" style="-fx-background-color: #8e9189; -fx-background-radius: 30;">
+         <children>
+            <Label fx:id="labelRemoveOrder" layoutX="19.0" layoutY="28.0" text="labelRemoveOrder" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="chooseRemoveOrder" layoutX="19.0" layoutY="81.0" prefHeight="25.0" prefWidth="162.0" promptText="Choose order" />
+            <JFXButton fx:id="submitRemoveOrder" layoutX="19.0" layoutY="146.0" onAction="#removeOrder" style="-fx-background-color: #abac7f;" styleClass="button2" text="Remove" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

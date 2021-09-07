@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #abc798;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QueriesController">
+   <children>
+      <JFXButton layoutX="11.0" layoutY="130.0" onAction="#getReleventDishList" prefHeight="55.0" prefWidth="250.0" styleClass="button2" text="getReleventDishList" />
+      <JFXComboBox fx:id="chooseCustomerForRelevent" layoutX="300.0" layoutY="80.0" onAction="#showReleventDishes" prefHeight="25.0" prefWidth="139.0" promptText="Choose customer" />
+      <JFXListView fx:id="listReleventDish" layoutX="300.0" layoutY="150.0" prefHeight="420.0" prefWidth="670.0" styleClass="listyle" />
+      <Label fx:id="labelReleventDish" layoutX="300.0" layoutY="125.0" text="Relevent Dishes for: " />
+      <JFXButton layoutX="11.0" layoutY="192.0" onAction="#getCooksByExpertise" prefHeight="55.0" prefWidth="250.0" styleClass="button2" text="getCooksByExpertise" />
+      <JFXComboBox fx:id="chooseExpertise" layoutX="300.0" layoutY="80.0" onAction="#showCooksExpertise" prefHeight="25.0" prefWidth="140.0" promptText="Choose expertise" />
+      <Label fx:id="labelExpertise" layoutX="300.0" layoutY="124.0" text="labelExpertise" />
+      <JFXListView fx:id="listExpertise" layoutX="300.0" layoutY="150.0" prefHeight="420.0" prefWidth="670.0" styleClass="listyle" />
+      <JFXButton layoutX="11.0" layoutY="253.0" onAction="#getDeliveriesByPerson" prefHeight="55.0" prefWidth="250.0" styleClass="button2" text="getDeliveriesByPerson" />
+      <JFXComboBox fx:id="chooseMonth" layoutX="680.0" layoutY="85.0" prefHeight="29.0" prefWidth="73.0" promptText="Month" />
+      <JFXButton fx:id="submitDeliveriesByDP" layoutX="780.0" layoutY="85.0" onAction="#showDeliveriesByDP" styleClass="button2" text="Submit" />
+      <JFXListView fx:id="listDeliveriesByDP" layoutX="300.0" layoutY="150.0" prefHeight="420.0" prefWidth="670.0" styleClass="listyle" />
+      <ComboBox fx:id="chooseDP" layoutX="460.0" layoutY="85.0" prefHeight="29.0" prefWidth="197.0" promptText="Choose delivery person" />
+      <JFXButton layoutX="11.0" layoutY="315.0" onAction="#getNumberOfDeliveriesPerType" prefHeight="55.0" prefWidth="250.0" styleClass="button2" text="getNumberOfDeliveriesPerType" />
+      <Label fx:id="labelNumDeliveries" layoutX="300.0" layoutY="125.0" text="labelNumDeliveries">
+         <font>
+            <Font size="50.0" />
+         </font></Label>
+      <JFXButton layoutX="11.0" layoutY="380.0" onAction="#revenueFromExpressDeliveries" prefHeight="55.0" prefWidth="250.0" styleClass="button2" text="revenueFromExpressDeliveries" />
+      <Label fx:id="labelRevenueExpress" layoutX="300.0" layoutY="125.0" text="labelRevenueExpress">
+         <font>
+            <Font size="50.0" />
+         </font></Label>
+      <JFXButton layoutX="11.0" layoutY="446.0" onAction="#getPopularComponents" prefHeight="55.0" prefWidth="250.0" styleClass="button2" text="getPopularComponents" />
+      <Label fx:id="labelPopularComps" layoutX="300.0" layoutY="125.0" text="labelPopularComps" />
+      <JFXListView fx:id="listPopularComps" layoutX="300.0" layoutY="150.0" prefHeight="420.0" prefWidth="171.0" styleClass="listyle" />
+      <BarChart fx:id="barChartComps" layoutX="465.0" layoutY="123.0" prefHeight="474.0" prefWidth="527.0" title="Components amount in dishes">
+        <xAxis>
+          <CategoryAxis label="Component" side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" label="Amount" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <JFXButton layoutX="11.0" layoutY="510.0" onAction="#getProfitRelation" prefHeight="55.0" prefWidth="250.0" styleClass="button2" text="getProfitRelation" />
+      <JFXListView fx:id="listProfitRelation" layoutX="300.0" layoutY="150.0" prefHeight="420.0" prefWidth="670.0" styleClass="listyle" />
+      <Label fx:id="labelProfitRelation" layoutX="300.0" layoutY="125.0" text="labelProfitRelation" />
+      <JFXButton fx:id="wordButton" layoutX="803.0" layoutY="85.0" onAction="#createWordDocument" styleClass="button2" text="Create word document" />
+      <AnchorPane layoutY="-1.0" prefHeight="50.0" prefWidth="1000.0" style="-fx-background-color: #eeefeb;">
+         <children>
+            <JFXButton layoutY="4.0" onAction="#switchToHomePage" text=" ">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backTo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="450.0" layoutY="6.0" text="Queries">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <PieChart fx:id="pieChartDeliveries" labelsVisible="false" layoutX="306.0" layoutY="281.0" prefHeight="282.0" prefWidth="365.0" />
+   </children>
+</AnchorPane>

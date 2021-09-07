@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageController">
+   <children>
+      <MediaView fx:id="media" fitHeight="540.0" fitWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="23.0" prefHeight="560.0" prefWidth="974.0">
+         <children>
+            <JFXButton layoutX="664.0" layoutY="228.0" onAction="#switchTo_Orders" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Orders">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="664.0" layoutY="388.0" onAction="#switchTo_Queries" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Queries">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="664.0" layoutY="58.0" onAction="#switchTo_DeliveryPersons" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Delivery persons">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="14.0" layoutY="58.0" onAction="#switchTo_Cooks" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Cooks">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="14.0" layoutY="228.0" onAction="#switchTo_Dishes" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Dishes">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="339.0" layoutY="388.0" onAction="#switchTo_DeliveryAreas" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Delivery areas">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="339.0" layoutY="58.0" onAction="#switchTo_Customers" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Customers">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="14.0" layoutY="388.0" onAction="#switchTo_Deliveries" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Deliveries">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="339.0" layoutY="228.0" onAction="#switchTo_Components" opacity="0.8" prefHeight="140.0" prefWidth="296.0" style="-fx-background-color: #abc798;" text="Components">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="348.0" layoutY="140.0" onAction="#switchTo_BlackList" opacity="0.6" prefHeight="46.0" prefWidth="279.0" style="-fx-background-color: #abc798;" text="Black list">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutY="12.0" onAction="#switchToLogin" text=" ">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backToLogin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

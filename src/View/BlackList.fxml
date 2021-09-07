@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #abc798;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BlackListController">
+   <children>
+      <TableView fx:id="table" layoutX="569.0" layoutY="67.0" prefHeight="530.0" prefWidth="376.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="firstNameCol" prefWidth="75.0" text="First name" />
+            <TableColumn fx:id="lastNameCol" prefWidth="75.0" text="Last name" />
+            <TableColumn fx:id="reasonCol" prefWidth="150.0" text="Reason for being banned" />
+        </columns>
+      </TableView>
+      <AnchorPane fx:id="pane" layoutX="45.0" layoutY="114.0">
+         <children>
+            <JFXComboBox fx:id="chooseCust" layoutY="69.0" prefHeight="25.0" prefWidth="134.0" promptText="Choose customer" />
+            <JFXTextArea fx:id="reason" layoutY="114.0" prefHeight="17.0" prefWidth="469.0" promptText="Enter a reason" />
+            <JFXButton fx:id="submitEdit" layoutX="188.0" layoutY="193.0" onAction="#submitEditBL" styleClass="button2" text="Submit" />
+            <JFXButton fx:id="searchCustRemove" layoutX="235.0" layoutY="70.0" onAction="#removeCust" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="submitAdd" layoutX="188.0" layoutY="193.0" onAction="#submitAddBL" styleClass="button2" text="Submit" />
+            <JFXButton fx:id="searchCustEdit" layoutX="235.0" layoutY="70.0" onAction="#searchCustForEdit" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="AddBL" layoutX="28.0" onAction="#showAddBL" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="EditBL" layoutX="181.0" onAction="#showEditBL" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="RemoveBL" layoutX="323.0" onAction="#showRemoveBL" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="1.0" prefHeight="50.0" prefWidth="1000.0" style="-fx-background-color: #eeefeb;">
+         <children>
+            <JFXButton layoutX="3.0" layoutY="1.0" onAction="#switchToHomePage" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backTo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="86.0" layoutY="-3.0" onAction="#ShowMenu" prefHeight="48.0" prefWidth="76.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="450.0" layoutY="6.0" text="BlackList">
+               <font>
+                  <Font name="Cambria" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

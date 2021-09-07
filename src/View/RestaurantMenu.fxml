@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <MediaView fx:id="media" fitHeight="700.0" fitWidth="1150.0" />
+      <AnchorPane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Label fx:id="labelHello" layoutX="50.0" layoutY="72.0" styleClass="labelRest" text="labelHello">
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
+            <JFXListView fx:id="listStarters" layoutX="21.0" layoutY="140.0" opacity="0.7" prefHeight="120.0" prefWidth="220.0" styleClass="listRest" />
+            <JFXListView fx:id="listMain" layoutX="21.0" layoutY="300.0" opacity="0.7" prefHeight="120.0" prefWidth="220.0" styleClass="listRest" />
+            <JFXListView fx:id="listDessert" layoutX="21.0" layoutY="463.0" opacity="0.7" prefHeight="120.0" prefWidth="220.0" styleClass="listRest" />
+            <Label layoutX="21.0" layoutY="109.0" styleClass="labelRest" text="Starters">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
+            <Label layoutX="21.0" layoutY="264.0" styleClass="labelRest" text="Main Dishes">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
+            <Label layoutX="21.0" layoutY="432.0" styleClass="labelRest" text="Desserts">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
+            <AnchorPane layoutX="373.0" layoutY="63.0" prefHeight="526.0" prefWidth="284.0">
+               <children>
+                  <Label fx:id="nameLabel" layoutX="5.0" styleClass="labelRest" text="nameLabel">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Label fx:id="priceLabel" layoutX="163.0" styleClass="labelRest" text="priceLabel">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <JFXListView fx:id="listComps" layoutY="227.0" opacity="0.7" prefHeight="187.0" prefWidth="262.0" styleClass="listyle" />
+                  <ImageView fx:id="image" fitHeight="170.0" fitWidth="170.0" layoutX="39.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="compsLabel" layoutX="3.0" layoutY="201.0" styleClass="labelRest" text="compsLabel" />
+                  <Label fx:id="removeCompLabel" layoutX="20.0" layoutY="458.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" text="removeCompLabel" textFill="#e6d3a3" />
+                  <Spinner fx:id="qunatitySpinner" layoutX="8.0" layoutY="488.0" prefHeight="25.0" prefWidth="64.0" />
+                  <JFXButton fx:id="addDishButton" layoutX="81.0" layoutY="486.0" onAction="#addNewDishToCart" styleClass="button2" text="Add to shopping cart">
+                     <graphic>
+                        <ImageView fx:id="imgMute2" fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="removeCompButton" layoutX="42.0" layoutY="419.0" onAction="#removeComp" prefHeight="30.0" prefWidth="178.0" styleClass="button2" text="Remove component">
+                     <graphic>
+                        <ImageView fx:id="imgMute1" fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/removeDish.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="cartPane" layoutX="756.0" layoutY="176.0">
+               <children>
+                  <JFXButton fx:id="checkOutButton" layoutX="15.0" layoutY="273.0" onAction="#switchTo_ShoppingCart" styleClass="button2" text="Move to check out">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/credit-card.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXListView fx:id="listDishes" layoutX="4.0" opacity="0.7" prefHeight="268.0" prefWidth="212.0" styleClass="listRest" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="-15.0" opacity="0.5" prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #eeefeb;">
+               <children>
+                  <JFXButton layoutY="27.0" onAction="#switchTo_UserProfile" text="User profile">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/userProfile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="170.0" layoutY="28.0" onAction="#switchToUserQueries" text="Need help?">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/query.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="quantityDishes" layoutX="773.0" layoutY="20.0" text="quantityDishes">
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="893.0" layoutY="27.0" onAction="#switchToLogin" text="Logout">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/backToLogin.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="746.0" layoutY="26.0" onAction="#watchCart" text="Shopping cart">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/shoppingCart.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <MediaView fx:id="mediaAudio" fitHeight="50.0" fitWidth="50.0" layoutX="475.0" layoutY="12.0" />
+                  <JFXButton layoutX="475.0" layoutY="32.0" onAction="#muteMusic" text="Music">
+                     <graphic>
+                        <ImageView fx:id="imgMute" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Media/music.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="imgUser" fitHeight="37.0" fitWidth="34.0" layoutX="9.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Media/userProfile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

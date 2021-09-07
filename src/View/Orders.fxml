@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #abc798;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderController">
+   <children>
+      <TableView fx:id="table" layoutX="400.0" layoutY="64.0" prefHeight="513.0" prefWidth="325.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="44.0" text="ID" />
+            <TableColumn fx:id="customerCol" prefWidth="69.0" text="Customer" />
+            <TableColumn fx:id="deliveryCol" prefWidth="210.39996337890625" text="Delivery" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="720.0" layoutY="44.0" prefHeight="548.0" prefWidth="266.0">
+         <children>
+            <JFXTextField fx:id="nameForDetails" layoutX="16.0" layoutY="12.0" prefHeight="25.0" prefWidth="172.0" promptText="Show more details - enter ID" />
+            <JFXButton fx:id="searchForDetails" layoutX="199.0" layoutY="10.0" onAction="#showDetails" styleClass="button2" text="Search" />
+            <JFXListView fx:id="listDishes" layoutX="32.0" layoutY="108.0" prefHeight="125.0" prefWidth="200.0" styleClass="listyle" />
+            <Label fx:id="labelDishes" layoutX="79.0" layoutY="90.0" text="Dishes in The Order" />
+            <Label fx:id="headerForDetails" layoutX="16.0" layoutY="47.0" prefHeight="25.0" prefWidth="231.0" text="Label" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane" layoutY="77.0" prefHeight="542.0" prefWidth="350.0">
+         <children>
+            <JFXComboBox fx:id="customer" layoutX="18.0" layoutY="79.0" prefHeight="25.0" prefWidth="148.0" promptText="Choose customer" />
+            <JFXComboBox fx:id="dish" layoutX="18.0" layoutY="119.0" prefHeight="25.0" prefWidth="122.0" promptText="Choose dishes" />
+            <JFXListView fx:id="listDishesAdd" layoutX="160.0" layoutY="126.0" prefHeight="125.0" prefWidth="184.0" styleClass="listyle" />
+            <JFXButton fx:id="addDishNew" layoutX="17.0" layoutY="163.0" onAction="#addDishForNewOrder" text="Add this dish" />
+            <JFXButton fx:id="resetDishes" layoutX="18.0" layoutY="194.0" onAction="#resetNewDishList" text="Reset Dishes" />
+            <JFXButton fx:id="submitAdd" layoutX="82.0" layoutY="411.0" onAction="#submitAddOrder" styleClass="button2" text="Submit" />
+            <JFXTextField fx:id="idForEdit" layoutX="15.0" layoutY="44.0" prefHeight="25.0" prefWidth="147.0" promptText="Enter Id of Order" />
+            <JFXButton fx:id="searchIdEdit" layoutX="176.0" layoutY="36.0" onAction="#searchForEdit" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="submitEdit" layoutX="52.0" layoutY="398.0" onAction="#submitEditOrder" prefHeight="51.0" prefWidth="113.0" styleClass="button2" text="Submit" />
+            <JFXButton fx:id="searchIdRemove" layoutX="176.0" layoutY="36.0" onAction="#removeOrder" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="RemoveOrder" layoutX="221.0" layoutY="-13.0" onAction="#showRemoveOrder" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="AddOrder" layoutX="73.0" layoutY="-15.0" onAction="#showAddOrder" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="EditOrder" layoutX="148.0" layoutY="-15.0" onAction="#showEditOrder" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="50.0" prefWidth="1000.0" style="-fx-background-color: #eeefeb;">
+         <children>
+            <JFXButton layoutX="78.0" onAction="#ShowMenu" prefHeight="48.0" prefWidth="76.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutY="2.0" onAction="#switchToHomePage" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backTo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="450.0" layoutY="6.0" prefHeight="40.0" prefWidth="113.0" text="Orders">
+               <font>
+                  <Font name="Cambria" size="32.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

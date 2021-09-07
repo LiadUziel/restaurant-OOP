@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #abc798;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerCotroller">
+   <children>
+      <TableView fx:id="table" layoutX="309.0" layoutY="57.0" prefHeight="319.0" prefWidth="688.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="30.0" text="ID" />
+          <TableColumn fx:id="firstNameCol" prefWidth="71.0" text="First name" />
+            <TableColumn fx:id="lastNameCol" prefWidth="76.0" text="Last name" />
+            <TableColumn fx:id="birthDateCol" prefWidth="86.0" text="Date of birth" />
+            <TableColumn fx:id="genderCol" prefWidth="68.0" text="Gender" />
+            <TableColumn fx:id="neighCol" prefWidth="95.0" text="Neighborhood" />
+            <TableColumn fx:id="lactoseCol" prefWidth="121.0" text="Sensitive to lactose?" />
+            <TableColumn fx:id="glutenCol" prefWidth="122.0" text="Sensitive to gluten?" />
+        </columns>
+      </TableView>
+      <AnchorPane fx:id="pane" layoutY="116.0" prefHeight="476.0" prefWidth="300.0">
+         <children>
+            <JFXTextField fx:id="firstName" layoutX="71.0" layoutY="65.0" promptText="First name" />
+            <JFXTextField fx:id="lastName" layoutX="71.0" layoutY="117.0" promptText="Last name" />
+            <DatePicker fx:id="birthday" layoutX="52.0" layoutY="171.0" promptText="Date of birth" />
+            <JFXRadioButton fx:id="unknown" layoutX="187.0" layoutY="229.0" selected="true" text="Unknown">
+               <selectedColor>
+                  <Color />
+               </selectedColor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="female" layoutX="104.0" layoutY="229.0" text="Female" toggleGroup="$gender">
+               <selectedColor>
+                  <Color />
+               </selectedColor>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="male" layoutX="25.0" layoutY="229.0" text="Male" toggleGroup="$gender">
+               <selectedColor>
+                  <Color />
+               </selectedColor>
+            </JFXRadioButton>
+            <JFXButton fx:id="submitAdd" layoutX="96.0" layoutY="406.0" onAction="#submitAddCustomer" prefHeight="56.0" prefWidth="98.0" styleClass="button2" text="Submit" />
+            <JFXComboBox fx:id="neighberhood" layoutX="72.0" layoutY="271.0" prefHeight="25.0" prefWidth="135.0" promptText="Neighberhood" />
+            <JFXCheckBox fx:id="isLactose" checkedColor="BLACK" layoutX="73.0" layoutY="328.0" text="Seneitive to lactose" />
+            <JFXCheckBox fx:id="isGluten" checkedColor="BLACK" layoutX="73.0" layoutY="364.0" text="Sensitive to gluten" />
+            <JFXTextField fx:id="idForEdit" layoutX="68.0" layoutY="32.0" promptText="Enter customer's id" />
+            <JFXButton fx:id="searchId" layoutX="207.0" layoutY="25.0" onAction="#searchForEdit" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="submitEdit" layoutX="96.0" layoutY="406.0" onAction="#submitEditCustomer" prefHeight="56.0" prefWidth="98.0" styleClass="button2" text="Submit" />
+            <JFXButton fx:id="searchIdRemove" layoutX="207.0" layoutY="26.0" onAction="#removeCustomer" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="AddCustomer" layoutX="24.0" layoutY="-19.0" onAction="#showAddCustomer" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="EditCustomer" layoutX="95.0" layoutY="-20.0" onAction="#showEditCustomer" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="RemoveCustomer" layoutX="167.0" layoutY="-18.0" onAction="#showRemoveCustomer" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXComboBox fx:id="chooseCustForHistory" layoutX="312.0" layoutY="386.0" onAction="#showOrderHistory" prefHeight="29.0" prefWidth="225.0" promptText="Choose customer for order history" />
+      <JFXListView fx:id="listOrderHistory" layoutX="301.0" layoutY="417.0" prefHeight="170.0" prefWidth="248.0" styleClass="listyle" />
+      <Label fx:id="labelDishesOrder" layoutX="565.0" layoutY="394.0" text="labelDishesOrder" />
+      <JFXListView fx:id="listDishesOrder" layoutX="559.0" layoutY="416.0" prefHeight="170.0" prefWidth="200.0" styleClass="listyle" />
+      <Label fx:id="labelComps" layoutX="780.0" layoutY="393.0" text="labelComps" />
+      <JFXListView fx:id="listComps" layoutX="776.0" layoutY="416.0" prefHeight="170.0" prefWidth="200.0" styleClass="listyle" />
+      <AnchorPane prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #eeefeb;">
+         <children>
+            <JFXButton onAction="#switchToHomePage" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backTo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="66.0" onAction="#ShowMenu" prefHeight="48.0" prefWidth="76.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="450.0" layoutY="6.0" text="Customers">
+               <font>
+                  <Font name="Cambria" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

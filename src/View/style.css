@@ -1,0 +1,118 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.table-view { /* , .list-view */
+	-fx-background-color:  #eeefeb; /* beige, ivory*/
+	-fx-background-radius: 20;
+}
+.table-view .column-header-background{
+	-fx-background-color: #eeefeb; /* rgb(10,101,101) */
+	-fx-background-radius: 30;
+	-fx-background-insets: 0 0 10 0;
+	-fx-padding: 0 0 10 0;
+	-fx-effect: dropshadow(two-pass-box, #abc798, 15, 0.0, 0.1, 3);
+}
+.table-view .column-header, .table-view .filler{
+	-fx-size: 40;
+	-fx-border-width: 0 0 10 0;
+	-fx-background-color: transparent;
+}
+.table-view .column-header .label{
+	-fx-text-fill: black;	
+	-fx-font-family: Cambria;
+}
+.table-row-cell{
+	-fx-background-color: #eeefeb;
+	-fx-background-radius: 20;
+	-fx-padding: 0 0 3 0;
+	-fx-background-insets: 0 0 1 0;
+	-fx-border-color: #abc798;
+	-fx-border-radius: 30;
+	-fx-border-width: 0.2;
+}
+.table-view .table-cell{
+    -fx-border-color: #8cdfed;
+    -fx-padding: 2 0 0 5px;
+	-fx-text-fill: black;
+	-fx-border-color: transparent;
+	-fx-font-family: Cambria; 
+}
+
+
+.listyle, .listRest{
+	-fx-background-color: #8e9189;
+	-fx-background-radius: 20;
+}
+.listyle .list-cell {
+    -fx-background-color:  #8e9189;
+    -fx-background-radius: 30;
+    -fx-font-family: Cambria;
+    -fx-font-size: 18;
+}
+.listRest .list-cell{
+    -fx-background-color:  #8e9189;
+    -fx-background-radius: 30;
+    -fx-font-family: Cambria;
+    -fx-font-size: 18;
+    
+	-fx-font-weight: bold;
+    -fx-text-fill: #f0c808;
+}
+.listyle .list-cell:filled:hover, .listRest .list-cell:filled:hover {
+    -fx-background-color: #eeefeb;
+    -fx-text-fill: black;
+}
+
+
+.button2 {
+    -fx-background-color: #eeefeb;
+	-fx-background-radius: 30;
+	-fx-font-family: Cambria;
+	-fx-font-size: 15;
+	
+}
+.button2:hover{
+	-fx-opacity: 0.6;
+}
+
+
+.combo-box {
+	-fx-border-width: 0.5px;
+	-fx-border-color: #ACACAC;
+	-fx-background-color: #eeefeb;
+	-fx-border-radius: 50;
+	-fx-background-radius: 50;
+	-fx-font-size: 13;
+	-fx-padding: 0;
+}
+.combo-box-popup .list-view .list-cell, .combo-box-popup{
+	-fx-background-radius: 50;
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover{
+    -fx-background-color: #07689F;/*prev selected*/
+    -fx-background-radius: 50;
+    
+    -fx-text-fill: #FFFFFF;
+}
+.combo-box-popup .list-view .list-cell:filled:hover{
+    -fx-background-color:  #E7E6E1; /*background cell hover*/
+    -fx-text-fill: #311D3F;
+	-fx-background-radius: 50;
+}
+.combo-box .input-line{
+	-fx-pref-height: 0px;
+}
+.combo-box .input-focused-line{
+	-fx-pref-height: 0px;
+}
+
+
+.label, .button, .text-field, .text-area, .check-box{
+	-fx-font-family: Cambria;
+	-fx-font-weight: bold;
+}
+
+.labelRest{
+	-fx-text-fill:  #eeefeb;
+}
+
+

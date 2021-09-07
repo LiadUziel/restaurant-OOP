@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #abc798;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CookController">
+   <children>
+      <TableView fx:id="table" layoutX="301.0" layoutY="70.0" prefHeight="277.0" prefWidth="693.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="100.0" text="ID" />
+          <TableColumn fx:id="firstNameCol" prefWidth="100.0" text="First name" />
+            <TableColumn fx:id="lastNameCol" prefWidth="100.0" text="Last name" />
+            <TableColumn fx:id="birthDateCol" prefWidth="100.0" text="Date of birth" />
+            <TableColumn fx:id="genderCol" prefWidth="100.0" text="Gender" />
+            <TableColumn fx:id="expertCol" prefWidth="100.0" text="Expertise" />
+            <TableColumn fx:id="isChefCol" prefWidth="100.0" text="Is chef?" />
+        </columns>
+      </TableView>
+      <AnchorPane fx:id="pane" layoutY="86.0" prefHeight="464.0" prefWidth="300.0">
+         <children>
+            <JFXTextField fx:id="firstName" layoutX="59.0" layoutY="63.0" promptText="First name" />
+            <JFXTextField fx:id="lastName" layoutX="59.0" layoutY="115.0" promptText="Last name" />
+            <DatePicker fx:id="birthday" layoutX="40.0" layoutY="169.0" promptText="Date of birth" />
+            <JFXRadioButton fx:id="unknown" layoutX="175.0" layoutY="227.0" selected="true" text="Unknown">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+               <selectedColor>
+                  <Color />
+               </selectedColor>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="female" layoutX="86.0" layoutY="227.0" text="Female" toggleGroup="$gender">
+               <selectedColor>
+                  <Color />
+               </selectedColor></JFXRadioButton>
+            <JFXRadioButton fx:id="male" layoutX="13.0" layoutY="227.0" text="Male" toggleGroup="$gender">
+               <selectedColor>
+                  <Color />
+               </selectedColor></JFXRadioButton>
+            <JFXComboBox fx:id="expertise" layoutX="52.0" layoutY="287.0" prefHeight="25.0" prefWidth="148.0" promptText="Expertise" />
+            <JFXCheckBox fx:id="isChef" checkedColor="BLACK" layoutX="52.0" layoutY="329.0" text="Is chef?" />
+            <JFXButton fx:id="submitAdd" layoutX="84.0" layoutY="404.0" onAction="#submitNewCook" prefHeight="56.0" prefWidth="98.0" styleClass="button2" text="Submit" />
+            <JFXButton fx:id="submitEdit" layoutX="84.0" layoutY="404.0" onAction="#submitEditCook" prefHeight="56.0" prefWidth="98.0" styleClass="button2" text="Submit" />
+            <JFXTextField fx:id="idForEdit" layoutX="59.0" layoutY="29.0" promptText="Enter the id of the cook" />
+            <JFXButton fx:id="searchId" layoutX="200.0" layoutY="25.0" onAction="#searchForEdit" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="searchIdRemove" layoutX="200.0" layoutY="25.0" onAction="#removeCook" styleClass="button2" text="Search">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="RemoveCook" layoutX="174.0" layoutY="-21.0" onAction="#showRemoveCook" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="EditCook" layoutX="106.0" layoutY="-21.0" onAction="#showEditCook" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="AddCook" layoutX="36.0" layoutY="-20.0" onAction="#showAddCook" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-5.0" prefHeight="51.0" prefWidth="1007.0" style="-fx-background-color: #eeefeb;">
+         <children>
+            <JFXButton layoutX="66.0" onAction="#ShowMenu" prefHeight="48.0" prefWidth="76.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="3.0" layoutY="4.0" onAction="#switchToHomePage" text=" ">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Media/backTo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="450.0" layoutY="6.0" text="Cooks">
+               <font>
+                  <Font name="Cambria" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
